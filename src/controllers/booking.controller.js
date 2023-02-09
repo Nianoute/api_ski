@@ -5,9 +5,6 @@ const bookingController = {
   getAll: async (req, res) => {
     try {
       const bookings = await Booking.find();
-      await Booking.findByIdAndUpdate(post.booking, {
-        $push: { post: post._id },
-      });
       res.status(200).send(bookings);
     } catch (error) {
       res.status(400).send(error);

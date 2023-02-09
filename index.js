@@ -7,6 +7,7 @@ const connectMongo = require("./config/mongo.config");
 
 const postRoute = require("./src/routes/post.route");
 const bookingRoute = require("./src/routes/booking.route");
+const commentRoute = require("./src/routes/comment.route");
 
 connectMongo();
 
@@ -15,6 +16,7 @@ app.use(cors());
 
 app.use(postRoute);
 app.use(bookingRoute);
+app.use(commentRoute);
 
 app.get("/", (req, res) => {
   res.send("Enfin je peux lire l'index!");
