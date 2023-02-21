@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const postController = require("../controllers/post.controller");
 
-const endpoint = "/api/posts";
+const endpoint = "/posts";
 
 router.get(endpoint, postController.getAll);
 router.get(`${endpoint}/:id`, postController.getOne);

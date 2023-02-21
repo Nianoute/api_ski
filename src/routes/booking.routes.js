@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const bookingController = require("../controllers/booking.controller");
 
-const endpoint = "/api/bookings";
+const endpoint = "/bookings";
 
 router.get(endpoint, bookingController.getAll);
 router.get(`${endpoint}/:id`, bookingController.getOne);
