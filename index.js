@@ -5,10 +5,11 @@ const port = process.env.PORT || 8000;
 const cors = require("cors");
 const connectMongo = require("./config/mongo.config");
 
-const postRoute = require("./src/routes/post.route");
-const bookingRoute = require("./src/routes/booking.route");
-const commentRoute = require("./src/routes/comment.route");
-const shopRoute = require("./src/routes/shop.route");
+const postRoute = require("./src/routes/post.routes");
+const bookingRoute = require("./src/routes/booking.routes");
+const commentRoute = require("./src/routes/comment.routes");
+const shopRoute = require("./src/routes/shop.routes");
+const authRoute = require("./src/routes/auth.routes")
 
 connectMongo();
 
@@ -19,6 +20,7 @@ app.use(postRoute);
 app.use(bookingRoute);
 app.use(commentRoute);
 app.use(shopRoute);
+app.use(authRoute)
 
 app.get("/", (req, res) => {
   res.send("Enfin je peux lire l'index!");
